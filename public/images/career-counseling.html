@@ -1,8 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Industry Verticals - Siddhi Infonet</title>
+  <title>Career Counseling - Siddhi Infonet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap CSS -->
@@ -70,7 +71,7 @@
       padding: 0 20px;
     }
     h2 {
-      color: #800000; /* maroon */
+      color: #800000;
       margin-top: 25px;
     }
     ul {
@@ -85,7 +86,7 @@
       margin: 40px 0;
     }
     .cta a {
-      background: #800000; /* maroon */
+      background: #800000;
       color: #fff;
       padding: 12px 25px;
       text-decoration: none;
@@ -104,6 +105,28 @@
       padding: 20px 0;
       margin-top: 30px;
     }
+
+    /* Floating Circles */
+    .circle {
+      position: absolute;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(45deg); }
+    }
+
+    /* Responsive Hero Section */
+    @media (max-width: 992px) {
+      .hero-text h1 { font-size: 2.5rem; }
+      .hero-text p { font-size: 1.1rem; }
+    }
+    @media (max-width: 576px) {
+      .hero-text h1 { font-size: 2rem; }
+      .hero-text p { font-size: 1rem; }
+    }
   </style>
 </head>
 <body>
@@ -112,7 +135,7 @@
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="newlogo.png" alt="Siddhi Infonet Logo">
+        <img src="{% static \'newlogo.png\' %}" alt="Siddhi Infonet Logo">
       </a>
       <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -120,7 +143,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
@@ -129,40 +152,48 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero position-relative" style="height: 300px; overflow:hidden;">
+  <section class="hero position-relative" style="height: 400px; overflow:hidden;">
     <div class="hero-bg position-absolute top-0 start-0 w-100 h-100" 
          style="background: linear-gradient(135deg, #800000, #ffc0cb); z-index:0;">
     </div>
-    <div class="hero-text position-absolute top-50 start-50 translate-middle text-center" style="z-index:1;">
-      <h1 class="animate__animated animate__fadeInDown">Industry Verticals</h1>
-      <p class="animate__animated animate__fadeInUp">Tailored solutions for diverse industries</p>
+
+    <!-- Floating Circles -->
+    <div class="floating-shapes position-absolute w-100 h-100" style="z-index:0;">
+      <span class="circle animate__animated animate__fadeIn" style="top:20%; left:10%; width:80px; height:80px;"></span>
+      <span class="circle animate__animated animate__fadeIn" style="top:50%; left:70%; width:120px; height:120px;"></span>
+      <span class="circle animate__animated animate__fadeIn" style="top:75%; left:30%; width:60px; height:60px;"></span>
+    </div>
+
+    <!-- Hero Text -->
+    <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white" style="z-index:1;">
+      <h1 class="animate__animated animate__fadeInDown">Career Counseling</h1>
+      <p class="animate__animated animate__fadeInUp">Guiding individuals to achieve their true potential</p>
     </div>
   </section>
 
   <!-- Main Content -->
   <div class="content">
     <p>
-      Siddhi Infonet partners with multiple sectors to deliver recruitment, training, and workforce solutions 
-      that are highly specialized for industry needs.
+      Our career counseling services are designed for students, graduates, and professionals seeking clarity in their career paths.
+      With expert mentors, we provide personalized advice based on aptitude, interests, and market trends.
     </p>
 
-    <h2>Industries We Serve</h2>
+    <h2>Our Counseling Includes</h2>
     <ul>
-      <li><strong>IT & Telecom:</strong> software engineers, network specialists, technical support</li>
-      <li><strong>BFSI:</strong> banking associates, insurance agents, financial advisors</li>
-      <li><strong>Healthcare:</strong> medical staff, support staff, healthcare management roles</li>
-      <li><strong>Education:</strong> teachers, trainers, academic administrators</li>
-      <li><strong>Retail & E-commerce:</strong> sales executives, customer support, logistics managers</li>
+      <li>Psychometric and aptitude assessments</li>
+      <li>One-on-one guidance sessions</li>
+      <li>Job market insights and industry forecasts</li>
+      <li>Educational and career roadmap planning</li>
     </ul>
 
-    <h2>Our Edge</h2>
+    <h2>Who Benefits?</h2>
     <p>
-      With domain-specific recruiters and trainers, we understand industry requirements better and deliver talent 
-      that adds immediate value.
+      Students preparing for higher education, fresh graduates entering the job market, and professionals looking to transition 
+      into new career domains all benefit from our expert support.
     </p>
 
     <div class="cta">
-      <a href="/contact.html">Work With Us</a>
+      <a href="/contact.html">Book a Counseling Session</a>
     </div>
   </div>
 
