@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,95 +50,15 @@
     .breadcrumb { max-width:1240px; margin:0 auto; padding:8px 16px 14px; font-size:13px; color:var(--muted); }
     .breadcrumb a { color: var(--primary); text-decoration: none; }
 
-    
-    /* ======= Hero Banner Slider ======= */
+    /* ======= Hero Banner ======= */
+    .hero {
+      background: url('/siddhi-hd.jpg') center/cover no-repeat; height: 420px; display:flex; align-items:center; justify-content:center; position: relative; color:#fff; text-align:center; overflow:hidden;
+    }
+    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.55)); }
+    .hero .inner { position:relative; z-index:2; padding:0 16px; }
+    .hero h1 { font-size: clamp(32px, 4vw, 56px); font-weight:800; line-height:1.15; margin:0 0 10px; }
+    .hero p { margin:0; font-size: clamp(14px, 1.6vw, 18px); opacity:.95; }
 
-  .hero{
-      position:relative;
-      height:520px;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:#fff;
-  }
-
-  /* Sliding Background Animation */
-
-  .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-
-      background-image:
-          url('/static/images/jobfair.jpg'),
-          url('/static/images/team.jpg'),
-          url('/static/images/event.jpg');
-
-      background-size:cover;
-      background-position:center;
-      animation:slider 15s infinite;
-      z-index:1;
-  }
-
-  /* Dark Overlay */
-
-  .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.55);
-      z-index:2;
-  }
-
-  /* Text Content */
-
-  .hero .inner{
-      position:relative;
-      z-index:3;
-      padding:0 20px;
-  }
-
-  .hero h1{
-      font-size:clamp(34px,5vw,64px);
-      font-weight:800;
-      line-height:1.15;
-      margin-bottom:16px;
-      color:#8b0000;
-  }
-
-  .hero p{
-      font-size:clamp(16px,2vw,24px);
-      font-weight:500;
-      color:#fff;
-  }
-
-  /* Animation */
-
-  @keyframes slider{
-
-      0%{
-          background-image:url('/static/images/jobfair.jpg');
-          transform:scale(1);
-      }
-
-      33%{
-          background-image:url('/static/images/team.jpg');
-          transform:scale(1.05);
-      }
-
-      66%{
-          background-image:url('/static/images/event.jpg');
-          transform:scale(1);
-      }
-
-      100%{
-          background-image:url('/static/images/jobfair.jpg');
-          transform:scale(1.05);
-      }
-  }
-    
     /* ======= Social Media Sidebar ======= */
 
 /* Social Sidebar */
@@ -445,8 +364,8 @@
   <nav class="navbar navbar-expand-lg bg-white sticky-top">
     <div class="container">
       <!-- Logo -->
-      <a class="navbar-brand" href="/">
-        <img src="{% static 'images/newlogo.png' %}" alt="Siddhi Infonet Logo" loading="lazy">
+      <a class="navbar-brand" href="index.html">
+        <img src="newlogo.png" alt="Siddhi Infonet Logo" class="logo" loading="lazy">
 
       </a>
 
@@ -486,140 +405,25 @@
   <!-- ======= Social Media Sidebar ======= -->
 <!-- Social Media Sidebar -->
 <div class="social-sidebar">
-  <a href="https://www.facebook.com/siddhiinfonet/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href=" https://www.instagram.com/siddhi_infonet_india_pvt_ltd?igsh=MTlyeGlzc2V4MzUzbg==" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/company/siddhi-infonet-india-pvt-ltd/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href=" https://www.linkedin.com/company/siddhi-infonet-india-pvt-ltd/" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="https://x.com/siddhiinfonet" target="_blank" ><i class="fab fa-twitter"></i></a>
-  <a href="https://www.linkedin.com/company/siddhi-infonet-india-pvt-ltd/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  <a href=" https://www.instagram.com/siddhi_infonet_india_pvt_ltd?igsh=MTlyeGlzc2V4MzUzbg==" target="_blank"><i class="fab fa-linkedin-in"></i></a>
 </div>
 
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 
- 
-
-<!-- HERO SLIDER -->
-
-<div class="hero">
-
-    <div class="slide active">
-        <img src="{% static 'images/about3.jpg' %}">
-    </div>
-
-    <div class="slide">
-        <img src="{% static 'images/about4.jpg' %}">
-    </div>
-
-    <div class="slide">
-        <img src="{% static 'images/about5.jpg' %}">
-    </div>
-
-    <div class="slide">
-        <img src="{% static 'images/all section job fair2.jpg' %}">
-    </div>
-
-    <div class="slide">
-        <img src="{% static 'images/barrely-job.jpg' %}">
-    </div>
-
-    <div class="overlay">
-        <div class="inner">
-            <h1>
-                
-                Empowering Employment & Growth
-            </h1>
-
-          
-        </div>
-    </div>
-
+  <!-- ======= Hero ======= -->
+ <div class="hero" data-aos="zoom-in" data-aos-duration="800" 
+     style="background: url('about3.jpg') no-repeat center center/cover; height: 400px;">
+     
+  <div class="inner">
+    <h1>About Siddhi Infonet<br/>Empowering Employment & Growth</h1>
+    <p>Recruitment • Skill Development • Government Project Execution • Workforce Enablement</p>
+  </div>
 </div>
-
-<style>
-
-.hero{
-    position:relative;
-    width:100%;
-    height:500px;
-    overflow:hidden;
-}
-
-.slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    opacity:0;
-    transition:opacity 1.5s ease-in-out;
-}
-
-.slide.active{
-    opacity:1;
-}
-
-.slide img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-.top-focus{
-    object-position:center top;
-}
-.overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.45);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-
-    z-index:10;
-}
-
-.inner h1{
-    color:#8b0000;
-    font-size:60px;
-    font-weight:800;
-    margin-bottom:15px;
-}
-
-.inner p{
-    color:white;
-    font-size:24px;
-}
-
-</style>
-
-<script>
-
-let slides = document.querySelectorAll('.slide');
-
-let currentSlide = 0;
-
-function showSlide(index){
-
-    slides.forEach(slide => {
-        slide.classList.remove('active');
-    });
-
-    slides[index].classList.add('active');
-}
-
-setInterval(() => {
-
-    currentSlide++;
-
-    if(currentSlide >= slides.length){
-        currentSlide = 0;
-    }
-
-    showSlide(currentSlide);
-
-}, 3000);
-
-</script>
-
 
   <!-- ======= About Section ======= -->
   <section id="about" class="about">
@@ -634,7 +438,7 @@ setInterval(() => {
       </div>
     </div>
     <div class="about-image" data-aos="fade-left">
-      <img src="{% static 'images/siddhi2.jpg' %}" alt="Siddhi Infonet Team" />
+      <img src="siddhi2.jpg" alt="Siddhi Infonet Team" />
     </div>
   </section>
 
@@ -723,6 +527,7 @@ setInterval(() => {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 /* Left Section */
 .impact-left h2 {
   font-size: 32px;
@@ -923,7 +728,7 @@ setInterval(() => {
       <!-- Founder -->
       <div class="col-md-3 col-sm-6">
         <div class="card h-100 shadow leader-card" data-bs-toggle="modal" data-bs-target="#founderModal">
-          <img src="{% static 'images/riteshf.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="Founder">
+          <img src="riteshf.jpg" class="card-img-top" alt="Founder - Ritesh Goel">
           <div class="card-body">
             <h5 class="card-title">Mr. Ritesh Goyal</h5>
             <p class="card-text">Founder</p>
@@ -934,7 +739,7 @@ setInterval(() => {
       <!-- Director -->
       <div class="col-md-3 col-sm-6">
         <div class="card h-100 shadow leader-card" data-bs-toggle="modal" data-bs-target="#directorModal">
-          <img src="{% static 'images/cfo.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="Director">
+          <img src="cfo.jpg" class="card-img-top" alt="Director XYZ">
           <div class="card-body">
             <h5 class="card-title">Mr. Nikhil Goel</h5>
             <p class="card-text">Director</p>
@@ -945,7 +750,8 @@ setInterval(() => {
       <!-- Business Head - BFSI -->
       <div class="col-md-3 col-sm-6">
         <div class="card h-100 shadow leader-card" data-bs-toggle="modal" data-bs-target="#parikshitModal">
-          <img src="{% static 'images/parikshit.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="Business Head - BFSI">
+          <img src="Bh parii.jpeg
+          " class="card-img-top" alt="Business Head - BFSI Parikshit Shukla">
           <div class="card-body">
             <h5 class="card-title">Mr. Parikshit Shukla</h5>
             <p class="card-text">Business Head - BFSI</p>
@@ -956,7 +762,7 @@ setInterval(() => {
       <!-- Business Head -->
       <div class="col-md-3 col-sm-6">
         <div class="card h-100 shadow leader-card" data-bs-toggle="modal" data-bs-target="#businessModal">
-          <img src="{% static 'images/rahul.jpg'%}" class="rounded-circle mb-3" width="140" height="140" alt="Business Head">
+          <img src="rahul.jpg" class="card-img-top" alt="Business Head Rahul">
           <div class="card-body">
             <h5 class="card-title">Mr. Rahul Gupta</h5>
             <p class="card-text">Business Head</p>
@@ -969,7 +775,7 @@ setInterval(() => {
       <!-- HR Recruiter -->
       <div class="col-md-3 col-sm-6">
         <div class="card h-100 shadow leader-card" data-bs-toggle="modal" data-bs-target="#hrModal">
-          <img src="{% static 'images/anshu.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="HR Recruiter">
+          <img src="anshu .jpeg" class="card-img-top" alt="HR Recruiter Rupmani Kumari">
           <div class="card-body">
             <h5 class="card-title">Mrs. Anshu Mala</h5>
             <p class="card-text">HR Recruiter</p>
@@ -992,7 +798,7 @@ setInterval(() => {
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body text-center">
-        <img src="{% static 'images/riteshf.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="Founder">
+        <img src="riteshf.jpg" class="rounded-circle mb-3" width="140" height="140" alt="Founder">
         <p>Ritesh Goel is the visionary Founder of Siddhi Infonet, driving innovation and growth with a mission to empower communities and workforce across India.</p>
       </div>
     </div>
@@ -1008,7 +814,7 @@ setInterval(() => {
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body text-center">
-        <img src="{% static 'images/cfo.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="Director">
+        <img src="cfo.jpg" class="rounded-circle mb-3" width="140" height="140" alt="Director">
         <p>Nikhil Goel oversees the strategic direction and operations, ensuring Siddhi Infonet delivers sustainable impact and excellence in all its initiatives.</p>
       </div>
     </div>
@@ -1024,7 +830,7 @@ setInterval(() => {
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body text-center">
-        <img src="{% static 'images/parikshit.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="Business Head - BFSI">
+        <img src="Bh parii.jpeg" class="rounded-circle mb-3" width="140" height="140" alt="Business Head - BFSI">
         <p>Mr. Parikshit Shukla heads the BFSI vertical, leading strategic initiatives, partnerships, and innovations in the Banking, Financial Services, and Insurance domain to deliver high-impact solutions and client success.</p>
       </div>
     </div>
@@ -1040,7 +846,7 @@ setInterval(() => {
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body text-center">
-        <img src="{% static 'images/rahul.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="Business Head">
+        <img src="rahul.jpg" class="rounded-circle mb-3" width="140" height="140" alt="Business Head">
         <p>Rahul Gupta leads business development and partnerships, building strong client relationships and creating opportunities for scalable growth.</p>
       </div>
     </div>
@@ -1058,7 +864,7 @@ setInterval(() => {
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body text-center">
-        <img src="{% static 'images/anshu.jpg' %}" class="rounded-circle mb-3" width="140" height="140" alt="HR Recruiter">
+        <img src="anshu .jpeg" class="rounded-circle mb-3" width="140" height="140" alt="HR Recruiter">
         <p>Anshu Mala manages recruitment and talent acquisition, ensuring Siddhi Infonet attracts and nurtures the best talent in the industry.</p>
       </div>
     </div>
@@ -1156,25 +962,26 @@ setInterval(() => {
     <h2 class="section-title">Our Clients</h2>
     <div class="clients-carousel">
       <div class="client-track">
-        <img src="{% static 'images/quess.png' %}" alt="quess"/>
-        <img src="{% static 'images/iimt.png' %}" alt="iimt"/>
-        <img src="{% static 'images/paytm1.png' %}" alt="paytm"/>
-        <img src="{% static 'images/hrit.png' %}" alt="hrit"/>
-        <img src="{% static 'images/ebixcash.png' %}" alt="ebixcash"/>
-        <img src="{% static 'images/hierank.png' %}" alt="hierank"/>
-        <img src="{% static 'images/iengineer.jpg' %}" alt="iengineer"/>
-        <img src="{% static 'images/justdial.png' %}" alt="justdial"/>
-        <img src="{% static 'images/franklinn.png' %}" alt="franklin"/>
-        <img src="{% static 'images/Sam.jpeg' %}" alt="sam"/>
-        <img src="{% static 'images/trisual.jpg' %}" alt="trisual"/>
-        <img src="{% static 'images/ct.jpeg' %}" alt="ct"/>
-        <img src="{% static 'images/axisbank.png' %}" alt="axisbank"/>
-        <img src="{% static 'images/mymoneymantra.png' %}" alt="mymoneymantra"/>
-        <img src="{% static 'images/nirman.png' %}" alt="nirman"/>
-        <img src="{% static 'images/vig.jpg' %}" alt="vig"/>
-        <img src="{% static 'images/nielit.jpg' %}" alt="nielit"/>
-        <img src="{% static 'images/pk.jpg' %}" alt="pk"/>
-        <img src="{% static 'images/gn.jpg' %}" alt="gn"/>
+        <img src="quess.png" alt="quess"/>
+        <img src="iimt.png" alt="iimt"/>
+        <img src="paytm1.png" alt="paytm1"/>
+        <img src="hrit.png" alt="hrit"/>
+        <img src="ebixcash.png" alt="ebixcash"/>
+        <img src="hierank.png" alt="hierank"/>
+        <img src="iengineer.jpg" alt="iengineer"/>
+        <img src="justdial.png" alt="justdial"/>         
+        <img src="franklinn.png" alt="franklinn"/>
+        <img src="Sam.jpeg" alt="sam"/>
+        <img src="trisual.jpg" alt="trisual"/>
+        <img src="ct.jpeg" alt="ct"/>
+        <img src="axisbank.png" alt="axisbank"/>
+        <img src="mymoneymantra.png" alt="mymoneymantra"/>
+        <img src="nirman.png" alt="nirman"/>
+        <img src="vig.jpg" alt="vig"/>
+        <img src="nielit.jpg" alt="nielit"/>
+        <img src="pk.jpg" alt="pk"/>
+        <img src="gn.jpg" alt="gn"/>
+        <img src="nirman.png" alt="nirman"/>
       </div>
     </div>
   </div>
@@ -1338,7 +1145,8 @@ setInterval(() => {
         <h2 style="margin:0">Let’s build your workforce advantage</h2>
         <p style="margin:6px 0 0; color:#475569">Tell us your hiring or skilling goals. Our team will get back within 1 business day.</p>
       </div>
-      
+      <div style="text-align:right">
+        <a class="btn primary" href="mailto:hr@siddhiinfonet.com"><i class="fa-solid fa-envelope"></i> Email Us</a>
       </div>
     </div>
   </section>
@@ -1442,7 +1250,9 @@ setInterval(() => {
   </script>
  
 
- <style>
+
+</body>
+</html>  <style>
     /* ======= Root Variables ======= */
     :root {
       --primary: #7f1111; /* Dark Red */
@@ -1481,35 +1291,11 @@ setInterval(() => {
     .breadcrumb a { color:#64748b; }
     .breadcrumb a:hover { color:var(--accent); }
     /* ======= Social Media Sidebar ======= */
-    /* ======= Social Media Sidebar ======= */
-.social-sidebar {
-    position: fixed;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 8px;
-    background: rgba(255,255,255,.9);
-    border: 1px solid var(--ring);
-    border-radius: 0 8px 8px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,.1);
-    z-index: 1000;
-}
+    .social-sidebar { position:fixed; top:50%; left:0; transform:
+  translateY(-50%); display:flex; flex-direction:column; gap:12px; padding:8px; background:rgba(255,255,255,.9); border:1px solid var(--ring); border-radius:0 8px 8px 0; box-shadow:0 4px 12px rgba(0,0,0,.1); z-index:1000; }
+    .social-sidebar a { color:var(--primary); font-size:18px; padding:8px; display:inline-block; }
+    .social-sidebar a:hover { background:var(--accent); color:#fff; border-radius:50%; }
 
-.social-sidebar a {
-    color: var(--primary);
-    font-size: 18px;
-    padding: 8px;
-    display: inline-block;
-}
-
-.social-sidebar a:hover {
-    background: var(--accent);
-    color: #fff;
-    border-radius: 50%;
-}
     /* ======= Hero ======= */
     .hero { position:relative; color:#fff; text-align:center; display:flex; align-items:center; justify-content:center; }
     .hero::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,.4); z-index:1; }
@@ -1653,6 +1439,4 @@ s
       .social-sidebar { flex-direction:row; bottom:0; top:auto; left:50%; transform:translateX(-50%); border-radius:8px 8px 0 0; padding:8px 16px; }
     }
   </style>
-</body>
-</html> 
  

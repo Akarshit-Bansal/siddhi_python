@@ -1,9 +1,8 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Web Development - Siddhi Infonet</title>
+  <title>Job Recruitment - Siddhi Infonet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap CSS -->
@@ -52,6 +51,24 @@
       position: relative;
       text-align: center;
       color: #fff;
+      height: 300px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      background: linear-gradient(135deg, #800000, #ffc0cb);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
     }
     .hero-text h1 {
       font-size: 2.8rem;
@@ -68,25 +85,29 @@
     .content {
       max-width: 900px;
       margin: 40px auto;
-      padding: 0 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
     h2 {
-      color: #800000;
+      color: #800000; /* maroon */
       margin-top: 25px;
     }
-    ul {
-      padding-left: 20px;
+    p, li {
+      color: #555;
     }
-    li {
-      margin-bottom: 8px;
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 15px;
     }
 
     .cta {
       text-align: center;
-      margin: 40px 0;
+      margin: 30px 0;
     }
     .cta a {
-      background: #800000;
+      background: #800000; /* maroon */
       color: #fff;
       padding: 12px 25px;
       text-decoration: none;
@@ -97,7 +118,6 @@
       background: #a00000;
     }
 
-    /* Footer */
     footer {
       background-color: #333;
       color: #fff;
@@ -106,25 +126,9 @@
       margin-top: 30px;
     }
 
-    /* Floating Circles */
-    .circle {
-      position: absolute;
-      background: rgba(255,255,255,0.2);
-      border-radius: 50%;
-      animation: float 6s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(45deg); }
-    }
-
-    /* Responsive Hero Section */
-    @media (max-width: 992px) {
-      .hero-text h1 { font-size: 2.5rem; }
-      .hero-text p { font-size: 1.1rem; }
-    }
-    @media (max-width: 576px) {
-      .hero-text h1 { font-size: 2rem; }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-text h1 { font-size: 2.2rem; }
       .hero-text p { font-size: 1rem; }
     }
   </style>
@@ -135,7 +139,7 @@
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="{% static \'newlogo.png\' %}" alt="Siddhi Infonet Logo">
+        <img src="newlogo.png" alt="Siddhi Infonet Logo">
       </a>
       <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -143,7 +147,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
@@ -152,49 +156,51 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero position-relative" style="height: 400px; overflow:hidden;">
-    <div class="hero-bg position-absolute top-0 start-0 w-100 h-100" 
-         style="background: linear-gradient(135deg, #800000, #ffc0cb); z-index:0;">
-    </div>
-
-    <!-- Floating Circles -->
-    <div class="floating-shapes position-absolute w-100 h-100" style="z-index:0;">
-      <span class="circle animate__animated animate__fadeIn" style="top:20%; left:10%; width:80px; height:80px;"></span>
-      <span class="circle animate__animated animate__fadeIn" style="top:50%; left:70%; width:120px; height:120px;"></span>
-      <span class="circle animate__animated animate__fadeIn" style="top:75%; left:30%; width:60px; height:60px;"></span>
-    </div>
-
-    <!-- Hero Text -->
-    <div class="hero-text position-absolute top-50 start-50 translate-middle text-center text-white" style="z-index:1;">
-      <h1 class="animate__animated animate__fadeInDown">Web Development</h1>
-      <p class="animate__animated animate__fadeInUp">Building modern, responsive, and scalable websites</p>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-text text-center">
+      <h1>Job Recruitment</h1>
+      <p>Connecting talent with the right opportunities</p>
     </div>
   </section>
 
   <!-- Main Content -->
   <div class="content">
     <p>
-      At <strong>Siddhi Infonet</strong>, we design and develop websites that deliver exceptional user experiences 
-      and strong digital presence for businesses across industries.
+      At <strong>Siddhi Infonet</strong>, our recruitment services are designed to bridge the gap
+      between talent and opportunity. We partner with top organizations across industries to ensure
+      the best hiring outcomes. Whether you're a fresher or an experienced professional, we bring
+      opportunities that align with your aspirations.
     </p>
 
-    <h2>Our Expertise</h2>
+    <h2>Why Choose Our Recruitment Services?</h2>
     <ul>
-      <li>Custom website design & development</li>
-      <li>Responsive and mobile-first layouts</li>
-      <li>E-commerce platforms and CMS integration</li>
-      <li>SEO optimization and performance tuning</li>
-      <li>Ongoing support and maintenance</li>
+      <li>Extensive database of pre-screened candidates across multiple domains</li>
+      <li>Specialized recruitment for IT, Telecom, Banking, Retail, and Healthcare</li>
+      <li>Proven track record in bulk hiring and executive search</li>
+      <li>End-to-end support – from job posting to onboarding</li>
     </ul>
 
-    <h2>Why Choose Us?</h2>
-    <p>
-      Our solutions combine creativity with technology. We ensure your website is not only visually 
-      appealing but also optimized for conversions and growth.
-    </p>
+    <h2>Our Recruitment Process</h2>
+    <p>We follow a structured and transparent process:</p>
+    <ol>
+      <li>Understanding client requirements in detail</li>
+      <li>Candidate sourcing through advanced tools & databases</li>
+      <li>Rigorous screening and preliminary interviews</li>
+      <li>Client shortlisting & final interviews</li>
+      <li>Offer management and smooth onboarding</li>
+    </ol>
+
+    <h2>Industries We Serve</h2>
+    <ul>
+      <li>Information Technology & Telecom</li>
+      <li>Banking, Financial Services & Insurance</li>
+      <li>Retail & FMCG</li>
+      <li>Healthcare & Education</li>
+    </ul>
 
     <div class="cta">
-      <a href="/contact.html">Start Your Project</a>
+      <a href="services.html">⬅ Back to Services</a>
     </div>
   </div>
 
@@ -206,13 +212,11 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Navbar Scroll Script -->
   <script>
     window.addEventListener("scroll", function() {
       const navbar = document.querySelector(".navbar");
       navbar.classList.toggle("scrolled", window.scrollY > 50);
     });
   </script>
-
 </body>
 </html>
