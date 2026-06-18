@@ -4,8 +4,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-secret-key'
 DEBUG = False
-ALLOWED_HOSTS = ['.vercel.app']
-
+ALLOWED_HOSTS = [
+    '.vercel.app',
+    'siddhiinfonet.com',
+    'www.siddhiinfonet.com',
+]
+CSRF_TRUSTED_ORIGINS = [
+    'https://siddhiinfonet.com',
+    'https://www.siddhiinfonet.com',
+    'https://siddhi-python-six.vercel.app',
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
