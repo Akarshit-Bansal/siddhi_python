@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.timezone import now
 from cloudinary.models import CloudinaryField
-
+import os
 
 class JobSeeker(models.Model):
     name = models.CharField(max_length=100)

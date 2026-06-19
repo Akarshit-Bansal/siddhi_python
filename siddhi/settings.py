@@ -25,12 +25,13 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'main',
 ]
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dmzworlnl',
-    'API_KEY': '288721815216229',
-    'API_SECRET': 'p4lBA3aW5qk4rJR-GQFtI4cPp3Y',
-    'secure': True
-}
+import cloudinary
+cloudinary.config(
+    cloud_name='dmzworlnl',
+    api_key='288721815216229',
+    api_secret='p4lBA3aW5qk4rJR-GQFtI4cPp3Y'
+)
+
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MIDDLEWARE = [
