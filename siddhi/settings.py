@@ -21,10 +21,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    'cloudinary',
+    'cloudinary_storage',
     'main',
 ]
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dmzworlnl',
+    'API_KEY': '288721815216229',
+    'API_SECRET': 'p4lBA3aW5qk4rJR-GQFtI4cPp3Y',
+}
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
@@ -64,7 +71,7 @@ from urllib.parse import urlparse
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -93,7 +100,7 @@ if database_url:
         DATABASES['default'] = {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / url.path.lstrip('/'),
-        }
+        } 
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Kolkata'

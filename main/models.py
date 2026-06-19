@@ -1,17 +1,21 @@
 from django.db import models
 from django.utils.timezone import now
+from cloudinary.models import CloudinaryField
+
 
 class JobSeeker(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     message = models.TextField(blank=True)
-    cv = models.FileField(upload_to='cvs/')
+
+    cv = CloudinaryField('cv')
+
     created_at = models.DateTimeField(default=now)
-  
 
     def __str__(self):
         return self.name
+
 
 class Vendor(models.Model):
     name = models.CharField(max_length=100)
@@ -27,4 +31,3 @@ class AdminUser(models.Model):
 
     def __str__(self):
         return self.username
-    
