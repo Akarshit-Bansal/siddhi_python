@@ -29,6 +29,7 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dmzworlnl',
     'API_KEY': '288721815216229',
     'API_SECRET': 'p4lBA3aW5qk4rJR-GQFtI4cPp3Y',
+    'secure': True
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
