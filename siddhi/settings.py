@@ -58,15 +58,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'siddhi.wsgi.application'
 
+import os
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'siddhi_db',
-        'USER': 'postgres',
-        'PASSWORD': 'Aksb@2004',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.parse(
+        os.environ.get("DATABASE_URL")
+    )
 }
 
 LANGUAGE_CODE = 'en-us'
