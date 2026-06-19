@@ -59,13 +59,41 @@ TEMPLATES = [
 WSGI_APPLICATION = 'siddhi.wsgi.application'
 
 import os
-import dj_database_url
+from urllib.parse import urlparse
 
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get("DATABASE_URL")
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+database_url = os.environ.get('DATABASE_URL')
+if database_url:
+    url = urlparse(database_url)
+    if url.scheme in ('postgres', 'postgresql'):
+        DATABASES['default'] = {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': url.path[1:],
+            'USER': url.username or '',
+            'PASSWORD': url.password or '',
+            'HOST': url.hostname or '',
+            'PORT': url.port or '',
+        }
+    elif url.scheme == 'mysql':
+        DATABASES['default'] = {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': url.path[1:],
+            'USER': url.username or '',
+            'PASSWORD': url.password or '',
+            'HOST': url.hostname or '',
+            'PORT': url.port or '',
+        }
+    elif url.scheme == 'sqlite':
+        DATABASES['default'] = {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / url.path.lstrip('/'),
+        }
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Kolkata'
